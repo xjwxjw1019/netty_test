@@ -1,10 +1,11 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.combined.djview;
 
-import java.util.*;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import java.io.*;
 import javax.sound.sampled.Line;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BeatModel implements BeatModelInterface, Runnable {
 	List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();

@@ -1,7 +1,7 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.proxy.javaproxy;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Proxy;
+import java.util.HashMap;
 
 public class MatchMakingTestDrive {
 	HashMap<String, Person> datingDB = new HashMap<String, Person>();

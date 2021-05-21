@@ -1,8 +1,10 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.proxy.virtualproxy;
 
-import java.net.*;
 import javax.swing.*;
-import java.util.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 public class ImageProxyTestDrive {
 	ImageComponent imageComponent;

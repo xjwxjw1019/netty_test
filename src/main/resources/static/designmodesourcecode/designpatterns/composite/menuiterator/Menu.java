@@ -1,7 +1,7 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.composite.menuiterator;
 
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Menu extends MenuComponent {
 	Iterator<MenuComponent> iterator = null;

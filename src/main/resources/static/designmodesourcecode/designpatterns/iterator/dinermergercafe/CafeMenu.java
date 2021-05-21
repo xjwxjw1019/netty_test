@@ -1,6 +1,8 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.iterator.dinermergercafe;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class CafeMenu implements Menu {
 	HashMap<String, MenuItem> menuItems = new HashMap<String, MenuItem>();

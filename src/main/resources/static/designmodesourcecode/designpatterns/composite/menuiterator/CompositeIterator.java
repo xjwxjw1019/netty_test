@@ -1,6 +1,7 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.composite.menuiterator;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Stack;
   
 public class CompositeIterator implements Iterator<MenuComponent> {
 	Stack<Iterator<MenuComponent>> stack = new Stack<Iterator<MenuComponent>>();

@@ -1,8 +1,8 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.combining.observer;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
 
 public class Observable implements QuackObservable {
 	List<Observer> observers = new ArrayList<Observer>();

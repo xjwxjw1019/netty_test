@@ -1,7 +1,9 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.builder.house;
 
 import headfirst.designpatterns.builder.house.HouseBuilder.HouseType;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class House {
 	String name;

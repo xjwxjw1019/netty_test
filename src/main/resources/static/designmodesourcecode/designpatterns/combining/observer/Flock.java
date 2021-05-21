@@ -1,7 +1,9 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.combining.observer;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.*;
+import java.util.List;
+import java.util.Observer;
 
 public class Flock implements Quackable {
 	List<Quackable> ducks = new ArrayList<Quackable>();

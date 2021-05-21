@@ -1,7 +1,7 @@
 package com.zengzhi.nettyall.other.designmodesourcecode.designpatterns.command.swing;
 	
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 	
 public class SwingCommandExample {
 	JFrame frame;
