@@ -54,6 +54,17 @@
             <artifactId>protostuff-api</artifactId>
             <version>1.6.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <!--将线程绑定到固定的CPU上-->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>affinity</artifactId>
+            <version>3.1.6</version>
+        </dependency>
     </dependencies>
 
     <build>

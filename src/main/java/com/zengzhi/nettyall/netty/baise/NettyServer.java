@@ -8,6 +8,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import net.openhft.affinity.AffinityStrategies;
+import net.openhft.affinity.AffinityThreadFactory;
+
+import java.util.concurrent.ThreadFactory;
 
 /**
  * @author xiejiawei
@@ -21,10 +25,18 @@ public class NettyServer {
         // 1.创建两个线程组
         // 一个负责连接请求/
         EventLoopGroup bossGroup = new NioEventLoopGroup();
+        // 绑定线程到cpu内核上
+        ThreadFactory threadFactory = new AffinityThreadFactory("worker", AffinityStrategies.DIFFERENT_CORE);
+
         // 一个负责读写请求
-        EventLoopGroup workGroup = new NioEventLoopGroup();
+        EventLoopGroup workGroup = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors() * 2,threadFactory);
         // 2.创建一个服务端启动对象
         ServerBootstrap serverBootstrap = new ServerBootstrap();
+//        ByteBuffer.allocate()
+//        ByteBuffer.allocateDirect()
+//        ByteBufAllocator allocator = PooledByteBufAllocator.DEFAULT;
+//        ByteBuf directBuffer = allocator.directBuffer();
+//        ByteBuf heapBuffer = allocator.heapBuffer();
         // 3. 设置相关参数
         // 采用主从线程组
         serverBootstrap.group(bossGroup, workGroup)

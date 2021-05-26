@@ -1,10 +1,7 @@
 package com.zengzhi.nettyall.websocket;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -51,7 +48,16 @@ public class WebSocketServer {
                         //添加具体的业务逻辑处理的Handler
                         pipeline.addLast(new WebSocketHandler());
                     }
-                });
+                })
+                // 设置发送的缓冲区大小
+                .childOption(ChannelOption.SO_SNDBUF, 1024)
+        // 设置接收的缓冲区大小
+                .childOption(ChannelOption.SO_RCVBUF, 1024)
+                // 设置队列的长度
+                .childOption(ChannelOption.SO_BACKLOG,1024)
+                .childOption(ChannelOption.TCP_NODELAY,true)
+                .childOption(ChannelOption.SO_KEEPALIVE,true);
+
         // 绑定监听端口
         try {
             ChannelFuture channelFuture = serverBootstrap.bind(8888).sync();
